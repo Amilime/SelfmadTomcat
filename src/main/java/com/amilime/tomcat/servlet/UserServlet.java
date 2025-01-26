@@ -25,7 +25,7 @@ public class UserServlet extends HttpAmServlet{
     @Override
     public void doPost(Request request, Response response) {
         OutputStream outputStream = response.outputStream;
-        String result = Response.responseHeader+ "useHandler get succeed";
+        String result = Response.responseHeader+ "connect succeed port:8085  I am tomcat1 with uri:/user";
         try {
             outputStream.write(result.getBytes());
             outputStream.flush();

@@ -9,4 +9,20 @@
         <servlet-name>UserServlet</servlet-name>
         <url-pattern>/user</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>icoServlet</servlet-name>
+        <servlet-class>com.amilime.tomcat.servlet.Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>icoServlet</servlet-name>
+        <url-pattern>/favicon.ico</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet</servlet-name>
+        <servlet-class>com.amilime.tomcat.servlet.NonServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
 </web-app>

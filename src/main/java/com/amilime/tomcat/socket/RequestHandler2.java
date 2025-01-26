@@ -18,19 +18,27 @@ public class RequestHandler2 implements Runnable{
     public Socket socket;
     public RequestHandler2(Socket socket){
         this.socket = socket;
+
+        System.out.println("servletMapping: " + StartTomcat.servletMapping);
+        System.out.println("urlMapping: " + StartTomcat.urlMapping);
     }
+
+
 // 找到请求
     @Override
     public void run() {
         InputStream inputStream = null;
         try{
+            System.out.println(socket.getInputStream());
             Request request = new Request(socket.getInputStream());
             Response response = new Response(socket.getOutputStream());
 
             String uri = request.getUri();
-            System.out.println("请求的uri"+uri);
-            StartTomcat.urlMapping.get(uri);
+            System.out.println("请求的uri是:"+uri);
+            //StartTomcat.urlMapping.get(uri);
             String servletNam = StartTomcat.urlMapping.get(uri);
+            System.out.println("获取到的servletNam"+servletNam);
+
             //StartTomcat.servletMapping.get(servletNam);
             HttpAmServlet handler = StartTomcat.servletMapping.get(servletNam);
             if(handler != null){
