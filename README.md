@@ -32,5 +32,9 @@ web.xml里的/user等路由则直接连接到自定义的第三方处理逻辑�
 总体而言只能是作为一个理解servlet和tomcat的项目。相当多的逻辑控制并没有写出。
 但是就对javaweb理解上而言，确实有一种醍醐灌顶的感觉。
 
+##1/29号更新
+最初版本存在路由问题 即从web.xml找到userservlet的问题  修改后允许uri使用/ /user /favicon.ico
+网页端一次会发送两个请求，一个是localhost一个是favicon.ico  
+所以都需要对其进行解析并返回响应。
 
 
